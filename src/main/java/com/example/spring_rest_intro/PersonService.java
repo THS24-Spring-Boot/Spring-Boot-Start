@@ -3,6 +3,7 @@ package com.example.spring_rest_intro;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PersonService {
@@ -27,11 +28,15 @@ public class PersonService {
                 .orElse(null);
     }
 
-    public void addPerson(Person person){
-        repository.addPerson(person);
+    public Map<String, String> getStatus(){
+        return repository.getStatus();
     }
 
-    public boolean deleteById(long id){
+    public Map<String, String> addPerson(Person person){
+        return repository.addPerson(person);
+    }
+
+    public boolean deleteById(int id){
         return repository.deleteById(id);
     }
 }

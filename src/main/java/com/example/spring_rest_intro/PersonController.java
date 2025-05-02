@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/person")
@@ -22,15 +23,24 @@ public class PersonController {
         return "hello Spring!";
     }
 
+
+    @GetMapping("/status")
+    public ResponseEntity<Map<String, String>> getStatus(){
+        Map<String, String> response = personService.getStatus();
+
+        if (response.containsValue("success")){
+            return ResponseEntity.ok(response);
+        } else return ResponseEntity.status(500).body(response);
+    }
+
     @PostMapping
-    public ResponseEntity<Person> createUser(@RequestBody Person person){
+    public ResponseEntity<Map<String, String>> createUser(@RequestBody Person person){
 
+        Map<String, String> response = personService.addPerson(person);
 
-        if(person == null){
-            return ResponseEntity.badRequest().build();
-        }
-        personService.addPerson(person);
-        return ResponseEntity.ok(person);
+        if(response.containsValue("success")){
+            return ResponseEntity.status(201).body(response);
+        } else return ResponseEntity.status(500).body(response);
 
     }
 
@@ -67,7 +77,7 @@ public class PersonController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Long> deleteById(@RequestParam long id){
+    public ResponseEntity<Integer> deleteById(@RequestParam int id){
         if(personService.deleteById(id)){
             return ResponseEntity.ok(id);
         }else {

@@ -2,7 +2,7 @@ package com.example.spring_rest_intro;
 
 public class Person {
 
-    private long id;
+    private int id;
 
     private String name;
 
@@ -10,18 +10,27 @@ public class Person {
 
     private static long maxId = 0;
 
-    public Person( String name, String email) {
-        this.id = maxId +1;
-        this.name = name;
-        this.email = email;
-        maxId ++;
+    public Person() {
     }
 
-    public long getId() {
+    public Person(String name, String email) {
+        //this.id = maxId +1;
+        this.name = name;
+        this.email = email;
+        //maxId ++;
+    }
+
+    public Person(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
