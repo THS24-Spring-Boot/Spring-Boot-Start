@@ -92,7 +92,7 @@ public class PersonRepository {
         Map<String, String> response = new HashMap<>();
 
 
-        // sql för update = UPDATE persons SET (name, email) VALUES (?,?) WHERE id = ?
+        // sql för update = "UPDATE persons SET name = ?, email = ? WHERE id = ?"
         try {
             jdbcTemplate.update("INSERT INTO persons (name, email) VALUES (?,?)",
                     person.getName(),
