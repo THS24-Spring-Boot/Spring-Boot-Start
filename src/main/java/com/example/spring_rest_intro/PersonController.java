@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/person")
@@ -67,7 +68,7 @@ public class PersonController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Person> getPersonById(@PathVariable long id){
-        Person person = personService.getPersonByid(id);
+        Person person = personService.getPersonByid(id).orElse(null);
 
         if(person == null){
             return ResponseEntity.notFound().build();
@@ -77,12 +78,10 @@ public class PersonController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Integer> deleteById(@RequestParam int id){
-        if(personService.deleteById(id)){
-            return ResponseEntity.ok(id);
-        }else {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<Integer> deleteById(@RequestParam long id){
+        personService.deleteById(id);
+        return ResponseEntity.ok(1);
+
     }
 
 }
