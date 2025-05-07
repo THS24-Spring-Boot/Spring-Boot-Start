@@ -335,10 +335,3 @@ Du har nu skapat en Spring Boot-applikation med:
 3. En RESTful API för CRUD-operationer
 
 Detta är en enkel men funktionell grund som du kan bygga vidare på. För större applikationer bör du överväga att använda JPA istället för JDBC för att förenkla databashanteringen.
-
-## Nästa steg
-
-- Prova att lägga till fler fält till Product-klassen
-- Implementera felhantering
-- Lägg till validering av inkommande data
-- Utöka med mer avancerade sökfunktioner
