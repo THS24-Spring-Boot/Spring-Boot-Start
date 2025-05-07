@@ -355,10 +355,3 @@ Du har nu skapat en Spring Boot-applikation med:
 4. En RESTful API för CRUD-operationer och sökningar
 
 Denna applikation visar den rekommenderade arkitekturen för de flesta Spring Boot-applikationer med databasåtkomst.
-
-## Nästa steg
-
-- Lägg till validering med Bean Validation
-- Implementera fler relationer (One-to-Many, Many-to-Many)
-- Bygg ut med ett webbgränssnitt
-- Lägg till säkerhet med Spring Security
