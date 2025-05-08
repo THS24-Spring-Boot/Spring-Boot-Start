@@ -38,7 +38,7 @@ För att kunna göra dessa övningar behöver du:
    - `id` (Long) - märk med @Id och @GeneratedValue
    - `title` (String)
    - `author` (String)
-   - `year` (Integer)
+   - `publicationYear` (Integer)
 
 4. Starta applikationen och öppna H2-konsolen (http://localhost:8080/h2-console)
 
