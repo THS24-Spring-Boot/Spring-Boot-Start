@@ -1,7 +1,12 @@
 package com.example.spring_rest_intro;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import org.springframework.context.annotation.Profile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Person {
@@ -14,7 +19,15 @@ public class Person {
 
     private String email;
 
-    private static long maxId = 0;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    private Profil profile;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    private List<Post> posts = new ArrayList<>();
+
+    //private static long maxId = 0;
 
     public Person() {
     }
@@ -54,6 +67,22 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Profil getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profil profile) {
+        this.profile = profile;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     @Override
