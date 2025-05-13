@@ -35,7 +35,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, String>> createUser(@RequestBody Person person){
+    public ResponseEntity<Map<String, String>> createUser(@RequestBody PersonRequestDto person){
 
         Map<String, String> response = personService.addPerson(person);
 
@@ -46,8 +46,8 @@ public class PersonController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Person>> getAll(){
-        List<Person> persons = personService.getAllPersons();
+    public ResponseEntity<List<PersonResponseDto>> getAll(){
+        List<PersonResponseDto> persons = personService.getAllPersons();
 
         if(persons.isEmpty()){
             return ResponseEntity.noContent().build();
@@ -67,8 +67,8 @@ public class PersonController {
 //    }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Person> getPersonById(@PathVariable long id){
-        Person person = personService.getPersonByid(id).orElse(null);
+    public ResponseEntity<PersonResponseDto> getPersonById(@PathVariable long id){
+        PersonResponseDto person = personService.getPersonByid(id);
 
         if(person == null){
             return ResponseEntity.notFound().build();

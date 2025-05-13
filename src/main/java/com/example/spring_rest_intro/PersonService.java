@@ -13,16 +13,27 @@ public class PersonService {
 
     PersonRepository repository;
 
-    public PersonService(PersonRepository repository) {
+    PersonMapper personMapper;
+
+    public PersonService(PersonRepository repository, PersonMapper personMapper) {
+        this.personMapper = personMapper;
         this.repository = repository;
     }
 
-    public List<Person> getAllPersons(){
-        return repository.findAll();
+    public List<PersonResponseDto> getAllPersons(){
+        //List<Person> personList = repository.findAll();
+        return personMapper.toDtoList(repository.findAll());
     }
 
-    public Optional<Person> getPersonByid(Long id){
-         return repository.findById(id);
+    public PersonResponseDto getPersonByid(Long id){
+        Optional<Person> opt = repository.findById(id);
+
+        if (opt.isPresent()){
+            return personMapper.toDto(opt.get());
+        }
+
+
+         return null ;
 
 
 //        return persons
@@ -48,8 +59,10 @@ public class PersonService {
 
     }
 
-    public Map<String, String> addPerson(Person person){
+    public Map<String, String> addPerson(PersonRequestDto personDto){
         Map<String,String> response = new HashMap<>();
+
+        Person person = personMapper.toEntity(personDto);
 
         try {
             repository.save(person);
