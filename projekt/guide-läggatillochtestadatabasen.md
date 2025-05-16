@@ -170,15 +170,6 @@ public class TestController {
    - `http://localhost:8080/test` - Bör visa "Spring Boot is running!"
    - `http://localhost:8080/test/database` - Bör visa book count (50)
 
-3. **Terminal test**:
-   ```bash
-   # Verifiera att databasen innehåller data
-   sqlite3 library.db
-   .tables
-   SELECT COUNT(*) FROM books;
-   .quit
-   ```
-
 ## 9. Validera entity-mappning
 
 När du skapat dina entities kan du validera att de matchar databasen:
