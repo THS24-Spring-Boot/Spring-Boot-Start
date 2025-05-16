@@ -23,6 +23,12 @@ public class PersonResponseDto {
         this.bio = bio;
     }
 
+    public PersonResponseDto(Long id, String name, String bio) {
+        this.id = id;
+        this.name = name;
+        this.bio = bio;
+    }
+
     public PersonResponseDto() {
     }
 

@@ -32,6 +32,12 @@ public class Person {
     public Person() {
     }
 
+    public Person(String name, String email, Profil profile) {
+        this.name = name;
+        this.email = email;
+        this.profile = profile;
+    }
+
     public Person(String name, String email) {
         //this.id = maxId +1;
         this.name = name;
