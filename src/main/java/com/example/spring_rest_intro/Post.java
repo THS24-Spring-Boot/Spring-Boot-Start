@@ -17,6 +17,7 @@ public class Post {
 
     private String content;
 
+
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
