@@ -50,7 +50,6 @@ Se den medföljande SQLite-databasen (`library.db`) för exakt struktur av:
 
 ### 1. Transactional Management
 - **@Transactional** för LoanService.createLoan()
-- **@Transactional(readOnly = true)** för read operations
 
 ### 2. Pagination
 - Implementera **Pageable** för GET /books
@@ -61,9 +60,8 @@ Se den medföljande SQLite-databasen (`library.db`) för exakt struktur av:
 - Korrekt HTTP status codes (200, 201, 404, 400)
 
 ### 4. DTO Mapping Patterns
-- Visa minst 3 olika mappningstekniker:
+- Visa minst 2 olika mappningstekniker:
   - Manuell mappning
-  - Builder pattern 
   - Stream API för listor
 
 ### 5. Custom Queries
