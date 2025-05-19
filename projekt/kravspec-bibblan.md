@@ -37,7 +37,6 @@ Se den medföljande SQLite-databasen (`library.db`) för exakt struktur av:
 - Sätt dueDate till +14 dagar vid låning
 
 ### DTOs (G)
-- Grundläggande DTOs för alla entiteter
 - BookWithDetailsDTO (med Author-info)
 - UserDTO (utan password)
 
