@@ -71,13 +71,11 @@ Se den medföljande SQLite-databasen (`library.db`) för exakt struktur av:
 - Optional return types
 
 ### 6. Exception Handling
-- **@ControllerAdvice** för global exception handling
 - Custom exceptions (BookNotFoundException, etc.)
 
 ### Extended Testing (VG)
 - Mock testing med **@MockBean**
 - Repository tests med **@DataJpaTest**
-- Tester för felscenarier
 
 ---
 
