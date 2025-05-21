@@ -36,10 +36,9 @@ com.example.library
 - [ ] **TESTA**: Endpoints fungerar
 
 ### 5. DTOs och Mappning
-- [ ] Skapa `BookDTO`, `AuthorDTO`
-- [ ] Lägg till mappning-metoder i services
 - [ ] Uppdatera controllers att returnera DTOs
 - [ ] Skapa `BookWithDetailsDTO` (med Author-info)
+- [ ] Lägg till mappning-metoder i services
 
 ### 6. User Entitet
 - [ ] Skapa `User` entity (tänk på password-hantering)
