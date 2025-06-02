@@ -41,8 +41,8 @@ Se den medföljande SQLite-databasen (`library.db`) för exakt struktur av:
 - UserDTO (utan password)
 
 ### Testing (G)
-- Unittest för LoanService.createLoan()
-- Integrationstest för POST /loans
+- Skriv ett test som kontrollerar att rätt datum sätts på dueDate när man lägger ett lån
+- Skriv ett test som kontrollerar att man inte kan lägga ett lån om boken har 0 available copies
 
 ---
 
