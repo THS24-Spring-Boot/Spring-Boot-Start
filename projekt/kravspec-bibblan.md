@@ -71,10 +71,6 @@ Se den medföljande SQLite-databasen (`library.db`) för exakt struktur av:
 ### 6. Exception Handling
 - Custom exceptions (BookNotFoundException, etc.)
 
-### Extended Testing (VG)
-- Mock testing med **@MockBean**
-- Repository tests med **@DataJpaTest**
-
 ---
 
 ## Teknisk Stack
